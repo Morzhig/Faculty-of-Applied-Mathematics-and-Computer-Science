@@ -1,0 +1,10 @@
+reset;
+model 'D:\Programming\ISO\Lab1\Lab1_1.mod';
+data 'D:\Programming\ISO\Lab1\Lab1_1.dat';
+option solver cplex;
+solve;
+
+printf "Результаты:\n";
+for {j in 1..6} {
+    printf "x[%d] = %d\n", j, x[j];
+}

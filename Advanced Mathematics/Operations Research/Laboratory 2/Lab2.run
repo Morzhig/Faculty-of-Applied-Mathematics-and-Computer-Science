@@ -1,0 +1,14 @@
+reset;
+
+model Lab2.mod;
+data Lab2.dat;
+
+option solver cplex;
+solve;
+
+printf "Суммарные затраты на год: %.2f y.e.\n", Total_Cost;
+printf "План производства и хранения велосипедов:\n";
+printf "Месяц\tПроизводство\tХранение\n";
+for {t in Months} {
+    printf "%s\t%d\t\t%d\n", Month[t], Production[t], Storage[t];
+}

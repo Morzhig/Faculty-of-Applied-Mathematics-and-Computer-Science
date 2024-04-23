@@ -1,0 +1,21 @@
+data;
+
+set Products := Chair Table;
+set Resources := Wood1 Wood2 Labor;
+
+param ResourceConsumption :=
+    Chair   Wood1   1
+    Chair   Wood2   1
+    Chair   Labor   2.5
+    Table   Wood1   3
+    Table   Wood2   0.5
+    Table   Labor   3;
+
+param ResourceAvailability :=
+    Wood1   360
+    Wood2   200
+    Labor   900;
+
+param ProductPrice :=
+    Chair   18
+    Table   24;

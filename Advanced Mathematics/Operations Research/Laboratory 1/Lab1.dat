@@ -1,0 +1,24 @@
+data;
+
+set NUTR := Calories Protein Fat Carbohydrates Cholesterol;
+set FOOD := oil meat bread juice;
+
+param: cost f_min f_max :=
+  oil     70    0     100
+  meat   300    0     100
+  bread   20    0     100
+  juice   50    0     100;
+
+param: n_min n_max :=
+  Calories        2400   2800
+  Protein           60     60
+  Fat               30     30
+  Carbohydrates     10     40
+  Cholesterol      0.15   0.5;
+
+param amt (tr):
+             Calories Protein Fat Carbohydrates Cholesterol :=
+  oil          800      0.6    20    0              0.15
+  meat         280      15     5     0              0.08
+  bread        245      8      0     5              0
+  juice        80       0      0     10             0;

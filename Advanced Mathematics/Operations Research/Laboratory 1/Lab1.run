@@ -1,0 +1,7 @@
+reset;
+model 'D:\Programming\ISO\Lab1\Lab1.mod';
+data 'D:\Programming\ISO\Lab1\Lab1.dat';
+option solver cplex;
+solve;
+display Buy;
+display Total_Cost;

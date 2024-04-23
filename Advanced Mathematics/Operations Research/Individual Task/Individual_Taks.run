@@ -1,0 +1,7 @@
+reset;
+model 'Individual_Task.mod';
+data 'Individual_Task.dat';
+option solver cplex;
+solve;
+display Quantity;
+display TotalRevenue;

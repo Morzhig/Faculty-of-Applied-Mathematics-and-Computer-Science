@@ -1,0 +1,3 @@
+﻿  Algorithm21.cpp
+D:\Programming\Cpp\Algorithms\Algorithm21\Algorithm21\Algorithm21.cpp(233,18): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
+  Algorithm21.vcxproj -> D:\Programming\Cpp\Algorithms\Algorithm21\x64\Debug\Algorithm21.exe

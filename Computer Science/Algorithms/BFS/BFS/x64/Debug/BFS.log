@@ -1,0 +1,3 @@
+﻿  BFS.cpp
+D:\Programming\Cpp\Algorithms\BFS\BFS\BFS.cpp(44,12): warning C4101: v: неиспользованная локальная переменная
+  BFS.vcxproj -> D:\Programming\Cpp\Algorithms\BFS\x64\Debug\BFS.exe

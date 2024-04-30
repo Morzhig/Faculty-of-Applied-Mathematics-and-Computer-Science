@@ -1,0 +1,4 @@
+﻿  Algprithm02.cpp
+D:\Programming\Cpp\Algprithm02\Algprithm02\Algprithm02.cpp(132,18): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
+D:\Programming\Cpp\Algprithm02\Algprithm02\Algprithm02.cpp(134,41): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
+  Algprithm02.vcxproj -> D:\Programming\Cpp\Algprithm02\x64\Debug\Algprithm02.exe

@@ -1,0 +1,3 @@
+﻿  vozrast.cpp
+D:\Programming\Cpp\Algorithms\vozrast\vozrast\vozrast.cpp(52,15): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+  vozrast.vcxproj -> D:\Programming\Cpp\Algorithms\vozrast\x64\Debug\vozrast.exe

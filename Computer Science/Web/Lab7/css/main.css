@@ -1,0 +1,80 @@
+  .main header{
+    text-align: right;
+    max-height: 50px;
+    border-radius:10px;
+    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color:#fff;
+  }
+  
+  .main header .submit {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .main header .btn-list {
+    margin: 2px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background-color: #3f93ff;
+  }
+
+  .main h3 {
+    text-align: center;
+    font-weight:bold;
+    font-size: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+    
+  .main form {
+    padding: 30px;
+    border-radius:10px;
+    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color:#fff;
+  }
+
+  .main form h1{
+    text-align: center;
+    font-weight:bold;
+    font-size: 26px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+
+  .main .about {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .main .item {
+    border-radius:10px;
+    margin-bottom:25px;
+    padding:10px 20px;
+  }
+  
+  .main .create-account {
+    border-radius:30px;
+    padding:10px 20px;
+    font-size:18px;
+    font-weight:bold;
+    background-color:#3f93ff;
+    border:none;
+    color:white;
+    margin-top:20px;
+  }
+  
+  .main footer{
+    vertical-align: bottom;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  @media (max-width: 576px) {
+    .main form {
+      padding:50px 20px;
+    }
+  }

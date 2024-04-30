@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Администратор</title>
+</head>
+<body>
+  <h1>Администратор</h1>
+  
+  <div class="employee-management">
+    <h2>Управление данными о служащих</h2>
+    <form action="add-employee.php" method="POST">
+      <!-- Форма для добавления служащего -->
+    </form>
+    
+    <table>
+      <tr>
+        <th>Имя</th>
+        <th>Должность</th>
+        <th>Действия</th>
+      </tr>
+      <!-- Здесь будет генерироваться таблица со списком служащих -->
+    </table>
+  </div>
+  
+  <div class="reports">
+    <h2>Формирование отчетов для руководства</h2>
+    <form action="generate-reports.php" method="POST">
+      <!-- Форма для выбора параметров отчета -->
+    </form>
+    
+    <!-- Здесь будет отображаться сгенерированный отчет -->
+  </div>
+  
+  <div class="system-settings">
+    <h2>Настройки системы и безопасности</h2>
+    <form action="system-settings.php" method="POST">
+      <!-- Форма для изменения настроек системы и безопасности -->
+    </form>
+  </div>
+</body>
+</html>

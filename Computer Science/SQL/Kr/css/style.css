@@ -1,0 +1,83 @@
+body {
+    background-color: #f2f0f7;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #8c1414;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+input {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button-container {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.button-container button {
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8c1414;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button-container button:hover {
+    background-color: #aa0606;
+}
+
+#logo {
+    width: 30px;
+    float:left;
+    margin-bottom: 20px;
+}
+
+#signature {
+    margin-top: 30px;
+    font-style: italic;
+}
+
+#signature:before {
+    content: "// ";
+}
+
+#tables-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}

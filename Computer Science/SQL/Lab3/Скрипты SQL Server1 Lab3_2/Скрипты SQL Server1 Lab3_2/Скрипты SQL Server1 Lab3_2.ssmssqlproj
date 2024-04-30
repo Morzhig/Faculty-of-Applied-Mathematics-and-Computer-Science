@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Скрипты SQL Server1 Lab3_2">
+  <Items>
+    <LogicalFolder Name="Соединения" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="DESKTOP-7DPIOCB\SQLEXPRESS1:sa">
+          <Created>2023-03-01T21:20:24.5343538+03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-7DPIOCB\SQLEXPRESS1</Server>
+          <UserName>sa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Среда Microsoft SQL Server Management Studio - запрос</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="DESKTOP-7DPIOCB\SQLEXPRESS1:Stud_Karpovich">
+          <Created>2023-02-22T21:13:02.0966366+03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-7DPIOCB\SQLEXPRESS1</Server>
+          <UserName>Stud_Karpovich</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>Ucheb_6_Karpovich</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Среда Microsoft SQL Server Management Studio - запрос</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Запросы" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="3_2_1.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_2_1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_10.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_10.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_11.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_11.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_12.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_12.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_13.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_13.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_14.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_14.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_2.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_3.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_4.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_5.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_5.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_6.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_6.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_7.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_7.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_8.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_8.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_2_9.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:Stud_Karpovich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>Stud_Karpovich</AssociatedConnUserName>
+          <FullPath>3_2_9.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_1.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_10.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_10.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_2.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_3.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_4.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_5.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_5.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_6.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_6.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_7.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_7.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_8.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_8.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3_3_9.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-7DPIOCB\SQLEXPRESS1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-7DPIOCB\SQLEXPRESS1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>3_3_9.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Разное" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

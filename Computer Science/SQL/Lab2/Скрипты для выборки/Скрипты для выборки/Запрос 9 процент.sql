@@ -1,0 +1,3 @@
+SELECT TOP 30 PERCENT * FROM Student
+ORDER BY 
+	Year;

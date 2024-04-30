@@ -1,0 +1,3 @@
+﻿  ConsoleApplicationReporter.cpp
+D:\Programming\Cpp\OS\ConsoleApplicationReporter\ConsoleApplicationReporter\ConsoleApplicationReporter.cpp(12,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  ConsoleApplicationReporter.vcxproj -> D:\Programming\Cpp\OS\ConsoleApplicationReporter\x64\Debug\ConsoleApplicationReporter.exe

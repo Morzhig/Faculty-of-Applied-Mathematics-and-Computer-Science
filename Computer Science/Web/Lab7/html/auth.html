@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Вход в систему</title>
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<div class="auth">
+    <form>
+        <h3 class="text-center">Форма авторизации</h3>
+        <div class="form-group">
+            <input class="form-control item" type="id" name="id" minlength="6" maxlength ="6" pattern="^[0-9_.-]*$" id="id" placeholder="Код" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control item" type="text" name="username" maxlength="30" minlength="2" pattern="^[а-яА-Я\s]*$" id="username" placeholder="Имя Фамилия" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control item" type="text" name="identity" minlength="9" maxlength="9" pattern="^[a-zA-Z0-9_.-]*$" id="identity" placeholder="Паспортные данные" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control item" type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form=group">
+            <select class="form-control item" placeholder="Должность">
+                <option>Администратор</option>
+                <option>Сотрудник</option>
+              </select>
+        </div>
+        <a href="main.html"><button class="btn btn-primary btn-block create-account" type="submit">Вход в систему</button></a>
+    </form>
+</div>

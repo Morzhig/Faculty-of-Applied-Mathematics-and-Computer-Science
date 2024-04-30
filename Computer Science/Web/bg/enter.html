@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница входа</title>
+  <style>
+     .back-button {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      background-image: url("background.jpg");
+      background-size: cover;
+      color: red;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    .login {
+      background-color: rgba(0, 123, 255, 0.7);
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: red;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+ </style>
+ <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      var toggleButton = document.getElementById('togglePassword');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleButton.textContent = 'Скрыть пароль';
+      } else {
+        passwordInput.type = 'password';
+        toggleButton.textContent = 'Показать пароль';
+      }
+    }
+    function goToMainPage() {
+      window.location.href = 'main.html';
+    }
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Проверка логина и пароля
+      if (username === 'admin' && password === 'password') {
+        // Успешный вход
+        window.location.href = 'uprav.html';
+      } else {
+        // Неправильный логин или пароль
+        alert('Неправильный логин или пароль');
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Страница входа</h1>
+  
+  <button class="back-button" onclick="goToMainPage()">На главную страницу</button>
+  <section class="login">
+    <form onsubmit="handleFormSubmit(event)">
+      <label for="username">Логин:</label>
+      <input type="text" id="username" name="username" required><br>
+      
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="button" id="togglePassword" onclick="togglePasswordVisibility()">Показать пароль</button><br>
+      
+      <input type="submit" value="Войти">
+    </form>
+  </section>
+</body>
+</html>

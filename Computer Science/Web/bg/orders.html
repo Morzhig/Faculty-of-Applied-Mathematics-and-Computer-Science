@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #007bff;
+      text-align: center;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="date"],
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table th,
+    table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .summary {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .back-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+
+  <title>Заказы</title>
+</head>
+<body>
+  <h1>Заказы</h1>
+  <button class="back-button" onclick="goToMainPage()">На главную страницу</button>
+  <form onsubmit="generateOrder(event)">
+    <label for="order-date">Дата:</label>
+    <input type="date" id="order-date" name="order-date" required><br>
+
+    <label for="sales-volume">Объем продажи:</label>
+    <input type="number" id="sales-volume" name="sales-volume" required><br>
+
+    <!-- Другие необходимые поля заказа -->
+
+    <input type="submit" value="Добавить заказ">
+  </form>
+
+  <table>
+    <tr>
+      <th>Дата</th>
+      <th>Объем продажи</th>
+      <th>Комиссия</th>
+      <th>Действия</th>
+    </tr>
+    <tbody id="order-table"></tbody>
+  </table>
+
+  <div class="summary">
+    <p>Общий объем продаж: <span id="total-sales"></span></p>
+    <p>Общая комиссия: <span id="total-commission"></span></p>
+  </div>
+
+  <script>
+        function goToMainPage() {
+      window.location.href = 'main.html';
+    }
+
+    function generateOrder(event) {
+      event.preventDefault();
+
+      const orderDateInput = document.getElementById('order-date');
+      const salesVolumeInput = document.getElementById('sales-volume');
+
+      const orderDate = orderDateInput.value;
+      const salesVolume = salesVolumeInput.value;
+
+      // Генерация строки с заказом
+      const orderRow = document.createElement('tr');
+
+      const orderDateCell = document.createElement('td');
+      orderDateCell.textContent = orderDate;
+      orderRow.appendChild(orderDateCell);
+
+      const salesVolumeCell = document.createElement('td');
+      salesVolumeCell.textContent = salesVolume;
+      orderRow.appendChild(salesVolumeCell);
+
+      const commissionCell = document.createElement('td');
+      // Вычисление комиссии на основе объема продажи
+      const commission = salesVolume * 0.1;
+      commissionCell.textContent = commission.toFixed(2);
+      orderRow.appendChild(commissionCell);
+
+      const actionsCell = document.createElement('td');
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Удалить';
+      deleteButton.addEventListener('click', () => {
+        orderRow.remove();
+        updateSummary();
+      });
+      actionsCell.appendChild(deleteButton);
+      orderRow.appendChild(actionsCell);
+
+      const orderTable = document.getElementById('order-table');
+      orderTable.appendChild(orderRow);
+
+      updateSummary();
+
+      // Очистка полей ввода
+      orderDateInput.value = '';
+      salesVolumeInput.value = '';
+    }
+
+    function updateSummary() {
+      const orderTable = document.getElementById('order-table');
+      const totalSalesElement = document.getElementById('total-sales');
+      const totalCommissionElement = document.getElementById('total-commission');
+
+      let totalSales = 0;
+      let totalCommission = 0;
+
+      for (let i = 0; i < orderTable.rows.length; i++) {
+        const salesVolumeCell = orderTable.rows[i].cells[1];
+        const commissionCell = orderTable.rows[i].cells[2];
+
+        const salesVolume = parseFloat(salesVolumeCell.textContent);
+        const commission = parseFloat(commissionCell.textContent);
+
+        totalSales += salesVolume;
+        totalCommission += commission;
+      }
+
+      totalSalesElement.textContent = totalSales.toFixed(2);
+      totalCommissionElement.textContent = totalCommission.toFixed(2);
+    }
+  </script>
+</body>
+</html>

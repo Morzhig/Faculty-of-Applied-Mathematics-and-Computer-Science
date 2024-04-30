@@ -1,0 +1,4 @@
+﻿  preobrazovanie.cpp
+D:\Programming\Cpp\OS\preobrazovanie\preobrazovanie\preobrazovanie.cpp(19,21): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Programming\Cpp\OS\preobrazovanie\preobrazovanie\preobrazovanie.cpp(20,21): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  preobrazovanie.vcxproj -> D:\Programming\Cpp\OS\preobrazovanie\x64\Debug\preobrazovanie.exe

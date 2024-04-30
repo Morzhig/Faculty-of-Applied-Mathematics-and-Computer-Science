@@ -1,0 +1,64 @@
+html {
+    background-color:#214c84;
+    background-blend-mode:overlay;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:100%;
+  }
+  
+  body {
+    background-color:transparent;
+  }
+  
+  .fail{
+    padding:50px 0;
+    text-align: center;
+  }
+  
+  .fail form {
+    max-width:800px;
+    padding:50px 70px;
+    border-radius:10px;
+    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color:#fff;
+  }
+  
+  .fail form h3 {
+    background: transparent;
+    text-align: center;
+    font-weight:bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 50px;
+    margin-top: 15px;
+    margin-bottom:30px;
+  }
+  
+  .fail .item {
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius:10px;
+    margin-bottom:25px;
+    padding:10px 20px;
+  }
+
+  .fail .return {
+    text-align: center;
+    border-radius:30px;
+    padding:10px 20px;
+    font-size:18px;
+    font-weight:bold;
+    background-color:#ff3f3f;
+    border:none;
+    color:white;
+    margin-top:20px;
+  }
+  
+  @media (max-width: 576px) {
+    .auth form {
+      padding:50px 20px;
+    }
+  }

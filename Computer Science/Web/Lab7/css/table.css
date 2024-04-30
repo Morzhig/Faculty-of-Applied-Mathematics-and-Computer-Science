@@ -1,0 +1,107 @@
+.main header{
+    text-align: right;
+    max-height: 50px;
+    border-radius:10px;
+    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color:#fff;
+  }
+  
+  .main header .submit {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .main header .btn-main {
+    margin: 2px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .main header .btn-list {
+    margin: 2px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .main header .search {
+        width: auto;
+        height: auto;
+  }
+
+  .main header .submit {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background-color: #3f93ff;
+  }
+
+  .main h3 {
+    text-align: center;
+    font-weight:bold;
+    font-size: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+    
+  .main form {
+    text-align: center;
+    padding: 30px;
+    border-radius:10px;
+    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color:#fff;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  th {
+    font-size: 20px;
+  }
+
+  td {
+    font-size: 16px;
+  }
+
+  table .input {
+    padding: 10px;
+    border-color: transparent;
+    text-align: center;
+  }
+
+  input {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .submit {
+    width: auto;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .btns {
+    text-align: left;
+  }
+  
+  .main footer{
+    vertical-align: bottom;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  @media (max-width: 576px) {
+    .main form {
+      padding:50px 20px;
+    }
+  }

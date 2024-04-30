@@ -1,0 +1,3 @@
+SELECT * FROM Student 
+ORDER BY Date
+	OFFSET 5 ROWS

@@ -1,0 +1,5 @@
+SELECT TOP 10 PERCENT * 
+FROM
+	Student
+ORDER BY
+		FIO ASC;

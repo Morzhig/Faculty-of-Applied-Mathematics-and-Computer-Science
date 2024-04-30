@@ -1,0 +1,5 @@
+SELECT TOP 1 FIO
+FROM
+	Student
+ORDER BY
+		Date ASC;

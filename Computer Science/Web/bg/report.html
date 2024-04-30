@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #f3f3f3;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #333333;
+      text-align: center;
+    }
+
+    form {
+      max-width: 300px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    button{
+      background-color: blue;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button {
+      background-color: blue;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+
+    .report-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+  </style>
+  <title>Отчеты</title>
+</head>
+<body>
+  <button class="back-button" onclick="goToMainPage()">На главную страницу</button>
+
+  <h1>Отчеты</h1>
+  
+  <form onsubmit="generateReport(event)">
+    <label for="report-type">Тип отчета:</label>
+    <select id="report-type" name="report-type" required>
+      <option value="worked-hours">Количество отработанных часов</option>
+      <option value="total-pay">Суммарная зарплата</option>
+      <option value="leave-balance">Остаток отпускных</option>
+      <!-- Другие типы отчетов -->
+    </select>
+    
+    <button class="button">Сгенерировать отчет</button>
+
+  </form>
+  
+  <div class="report-container">
+     <table>
+    <tr>
+      <th>Тип отчета</th>
+      <th>Данные отчета</th>
+      <th>Дата отчета</th>
+    </tr>
+    <tr>
+      <td id="report-type"></td>
+      <td id="report-data"></td>
+      <td id="report-date"></td>
+    </tr>
+  </table>
+  </div>
+
+  
+  <script>
+    // Функция для генерации отчета на основе параметров формы
+    function generateReport(event) {
+      event.preventDefault();
+
+      // Получение значений параметров формы
+      const reportType = document.getElementById('report-type').value;
+      const reportData = document.getElementById('report-data').value;
+      const reportDate = document.getElementById('report-date').value;
+
+      // Создание разметки таблицы
+      const table = document.createElement('table');
+
+      // Создание заголовка таблицы
+      const headerRow = document.createElement('tr');
+      const reportTypeHeader = document.createElement('th');
+      reportTypeHeader.textContent = 'Тип отчета';
+      headerRow.appendChild(reportTypeHeader);
+      const dataHeader = document.createElement('th');
+      dataHeader.textContent = 'Данные отчета';
+      headerRow.appendChild(dataHeader);
+      const dateHeader = document.createElement('th');
+      dateHeader.textContent = 'Дата отчета';
+      headerRow.appendChild(dateHeader);
+      table.appendChild(headerRow);
+
+      // Создание строки данных отчета
+      const dataRow = document.createElement('tr');
+      const reportTypeCell = document.createElement('td');
+      reportTypeCell.textContent = reportType;
+      dataRow.appendChild(reportTypeCell);
+      const dataCell = document.createElement('td');
+      dataCell.textContent = reportData;
+      dataRow.appendChild(dataCell);
+      const dateCell = document.createElement('td');
+      dateCell.textContent = reportDate;
+      dataRow.appendChild(dateCell);
+      table.appendChild(dataRow);
+
+      // Отображение таблицы с отчетом
+      const reportContainer = document.querySelector('.report-container');
+      reportContainer.innerHTML = '';
+      reportContainer.appendChild(table);
+    }
+
+    function goToMainPage() {
+      window.location.href = 'main.html';
+    }
+  </script>
+</body>
+</html>

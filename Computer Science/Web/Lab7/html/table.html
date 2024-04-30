@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Список сотрудников</title>
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<div class="main">
+    <header>
+        <a href="main.html"><button type="button" class="btn-main">Главная</button></a>
+        <input type="text" name="text" class="search" placeholder="Поиск...">
+        <input class="search" type="submit" name="submit" class="submit" value="Поиск">
+    </header>
+    <hr></hr>
+    <form>
+        <h1 class="text-center">Наши сотрудники</h1>
+            <table align="center">
+                <tr>
+                    <th>Код</th>
+                    <th>Фамилия Имя</th>
+                    <th>Номер телефона</th>
+                    <th>Должность</th>
+                    <th>Способ оплаты</th>
+                </tr>
+                <tr>
+                    <td>12345</td>
+                    <td>Карпович Артём</td>
+                    <td>+375291234567</td>
+                    <td>Какая-то</td>
+                    <td>Почасовая</td>
+                </tr>
+                <tr>
+                    <td>12346</td>
+                    <td>Фамилия Имя</td>
+                    <td>+375297654321</td>
+                    <td>Какая-то</td>
+                    <td>Фиксированная</td>
+                </tr>
+           </table>
+           <p></p>
+           <a href="fail.html"><button type="button" class="btn-list">Сортировать</button></a>
+           <p></p>
+            <table class="input" align="center" border="0">
+                    <td>
+                        <input type="id" name="id" minlength="6" maxlength ="6" pattern="^[0-9_.-]*$" id="id" placeholder="Код" required>
+                    </td>
+                    <td>
+                        <input type="text" name="username" maxlength="30" minlength="2" pattern="^[а-яА-Я\s]*$" id="username" placeholder="Фамилия Имя" required>
+                    </td>
+                    <td>
+                        <input type="text" name="identity" minlength="7" maxlength="12" id="identity" placeholder="Номер телефона" required>
+                    </td>
+                    <td>
+                        <input type="text" name="status" id="status" placeholder="Должность" required>
+                    </td>
+                    <td>
+                        <input type="text" name="type" placeholder="Способ оплаты" required>
+                    </td>
+           </table>
+           <p></p>
+            <input type="submit" name="submit" class="submit" value="Добавить">
+    </form>
+    <hr></hr>
+    <footer>@Copyright Карпович Артём, 6 группа 2023- All Right Reserved</footer>
+</div>

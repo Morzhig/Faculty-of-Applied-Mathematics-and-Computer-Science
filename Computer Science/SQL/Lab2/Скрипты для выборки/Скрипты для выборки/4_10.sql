@@ -1,0 +1,3 @@
+SELECT TOP 5 WITH TIES *FROM Student
+ORDER BY
+    Year;

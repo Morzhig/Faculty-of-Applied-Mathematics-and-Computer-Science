@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+   
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	
+	<title>Заказ такси</title>
+	
+	
+	<link rel="stylesheet" href="css/theme.css" id="template-color" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+</head>
+  
+  <body class="home">
+	
+	<main class="main" role="main">
+		<div class="intro">
+			<div class="wrap">
+				<div class="textwidget">
+					<div class="actions">
+						<a href="#services" class="btn large white wow fadeInLeft anchor">Подробнее</a>
+						<a href="#booking" class="btn large color wow fadeInRight anchor">Подать заявку</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="wrap">
+			<div class="row" id="booking">
+				<div class="full-width content">
+					<h2>Информация о заказе</h2>
+				</div>
+				
+				<div class="three-fourth">
+					<form>
+						<div class="f-row">
+							<div class="one-half">
+								<label for="name">Ваше имя</label>
+								<input type="text" id="name" required/>
+							</div>
+							<div class="one-half">
+								<label for="number">Ваш телефон</label>
+								<input type="number" id="number" required/>
+							</div>
+						</div>
+						<div class="f-row">
+							<div class="one-half">
+								<label for="address">Адрес</label>
+								<input type="text" id="address" required/>
+							</div>
+							<div class="one-half">
+								<label for="dep-date">Дата и время доставки машины</label>
+								<input type="text" id="dep-date" required>
+							</div>
+						</div>
+
+						<div class="actions">
+							<a href="#" class="btn medium back">Отмена</a>
+							<a class="btn medium color right" id="cont">Продолжить</a>
+						</div>
+					</form>
+				</div>
+
+				<aside class="one-fourth sidebar right">
+					<div class="widget" id="widget">
+						<h4>Итоги заказа</h4>
+						<div class="summary">
+							<div>
+								<h5>О клиенте</h5>
+								<dl>
+									<dt>Имя</dt>
+									<dd id="ddname">Иван</dd>
+									<dt>Телефон</dt>
+									<dd id="ddnum">+7 123 456 78 90</dd>
+									<dt>Откуда</dt>
+									<dd id="ddadr">Москва</dd>
+									<dt>Время</dt>
+									<dd id="dddate">31.08.2016 в 16:00</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="services" id="services">
+				<div class="details">
+					<h2> 8. Разработать проект «Заказ такси». </h2>
+					<p> Информаци о заказе: </p>
+					<p>	•	Адрес; </p>
+					<p> •	Телефон; </p>
+					<p>	•	Дата и время; </p> 
+					<p> •	Имя заказчика. </p>
+				</div>
+		</div>
+		
+		<hr>
+
+		<div class="orders" id="orders">
+			<div class="details">
+	
+			</div>
+		</div>
+	</main>
+
+	<script src="js/scripts.js"></script>
+	<script src="js/finish.js"></script>
+	
+  </body>
+
+</html>

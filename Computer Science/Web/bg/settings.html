@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Настройки</title>
+  <style>
+      .form-container {
+      margin-bottom: 20px;
+    }
+    
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+      width: 200px;
+      padding: 5px;
+    }
+    
+    .form-container input[type="radio"] {
+      margin-right: 5px;
+    }
+    
+    .form-container input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #337ab7;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    
+    .success-message {
+      color: green;
+      font-weight: bold;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+      color: #333;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #ff0000;
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="radio"] {
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #990000;
+    }
+    
+    .back-button {
+      display: inline-block;
+      background-color: #0000ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    
+    .back-button:hover {
+      background-color: #000099;
+    }
+  </style>
+</head>
+<body>
+  <h1>Настройки</h1>
+  
+  <a class="back-button" href="main.html">Вернуться на главную страницу</a>
+  
+  
+  <div class="form-container">
+    <form action="settings.php" method="POST">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required><br>
+      
+      <label for="address">Адрес:</label>
+      <input type="text" id="address" name="address" required><br>
+      
+      <input type="submit" value="Сохранить">
+    </form>
+  </div>
+  
+  <div class="form-container">
+    <form action="payment-preferences.php" method="POST">
+      <p>Предпочитаемый способ получения чеков на оплату:</p>
+      <input type="radio" id="mail" name="payment-method" value="mail">
+      <label for="mail">Почта</label><br>
+      <input type="radio" id="bank-account" name="payment-method" value="bank-account">
+      <label for="bank-account">Банковский счет</label><br>
+      <input type="radio" id="office" name="payment-method" value="office">
+      <label for="office">Офис</label><br>
+      
+      <input type="submit" value="Сохранить">
+    </form>
+  </div>
+  
+  <div class="form-container">
+    <form action="security-settings.php" method="POST">
+      <p>Настройки безопасности и конфиденциальности:</p>
+      <label for="new-password">Новый пароль:</label>
+      <input type="password" id="new-password" name="new-password" required><br>
+      
+      <input type="submit" value="Сохранить">
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var forms = document.querySelectorAll("form");
+      
+      forms.forEach(function(form) {
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          Swal.fire({
+            title: "Информация сохранена",
+            icon: "success",
+            timer: 2000,
+            timerProgressBar: true,
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

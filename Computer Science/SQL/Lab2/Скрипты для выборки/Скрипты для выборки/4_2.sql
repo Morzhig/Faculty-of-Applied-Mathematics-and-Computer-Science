@@ -1,0 +1,1 @@
+SELECT FIO, Specialization, Date FROM Student

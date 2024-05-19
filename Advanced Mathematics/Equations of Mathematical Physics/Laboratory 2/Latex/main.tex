@@ -442,24 +442,20 @@
         u(x, 0) = 2x.\\
     \end{cases}
 \end{eqnarray}
-Сразу зададим ее в WolframMathematica
-\begin{figure}
-    \includegraphics[width=1\linewidth]{image_1.png}
-\end{figure}
 Решение задачи будем искать в виде $$u(x,t) = v(x,t)+w(x,t),$$
 где функция $v(x,t)$ удовлетворяет смешанной задаче с однородными граничными условиями, а функция $w(x,t)$ - неоднородным граничным условиям.
 
 Найдем функцию $w(x,t)$ из представления:
-$$w(x,t)=A(t)x^2+B(t)x+C(t).$$
+$$w(x,t)=A(t)x+B(t).$$
 
 Подставим это представление в граничные условия:
-$$w(l,t)=A(t)l^2+B(t)l+C(t)=\frac{l}{t+1},$$
-$$w_x(0,t)=B(t)=\frac{1}{t+1}.$$
+$$w(l,t)=A(t)l+B(t)=\frac{l}{t+1},$$
+$$w_x(0,t)=A(t)=\frac{1}{t+1}.$$
 Примем $A(t)=0$, тогда 
-$$w(l,t)=\frac{l}{t+1}+C(t)=\frac{l}{t+1} \Rightarrow C(t)=0.$$
+$$w(l,t)=\frac{1}{t+1}l+B(t)=\frac{l}{t+1} \Rightarrow B(t)=0.$$
 Таким образом, получаем представление функции $w(x,t)$:
-$$w(x,t)=\frac{1}{t+1}x.$$
-И мы имеем, что $$u(x,t)=\frac{1}{t+1}x + v(x,t).$$
+$$w(x,t)=\frac{x}{t+1}.$$
+И мы имеем, что $$u(x,t)=\frac{x}{t+1} + v(x,t).$$
 Для нахождения $v(x,t)$ составим задачу с однородными граничными условиями
 \begin{eqnarray}
     \begin{cases}
@@ -510,11 +506,43 @@ $$v(x,t) = \sum_{k=0}^\infty {T_k(t)X_k(t)} = \sum_{k=0}^\infty {A_ke^{-a^2 \Big
 Подставим в начальное условие задачи $(3)$
 $$v(x,0) = \sum_{k=0}^\infty {A_k\cos(\frac{\pi+2\pi k}{2l} x)} = x$$
 Для нахождения $A_k$ разложим функцию $x$ в ряд Фурье по собственным функциями:
-$$A_k = \varphi_k = \frac{2}{l} \int_0^l {x}X_k(x)dx = \frac{2}{l} \int_0^l {x}\cos(\frac{\pi+2\pi k}{2l} x)dx$$
-Найдем решение с помощью WolframMathematica:
-$$A_k=\frac{(-1)^k 8l - 8l}{(\pi + 2\pi k)^2}.$$
+$$A_k = \varphi_k = \frac{\int_0^l {x}X_k(x)dx}{\int_0^l X_k^2(x)dx} = \frac{\int_0^l {x}\cos(\frac{\pi+2\pi k}{2l})dx}{\int_0^l \cos^2(\frac{\pi+2\pi k}{2l})dx} =\frac{I_1}{I_2}.$$
+Вычислим интегралы $I_1$ и $I_2$ в WolframMathematica
+\begin{figure}
+    \includegraphics[width=0.75\linewidth]{image_3.png}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=0.75\linewidth]{image_4.png}
+\end{figure}
+Таким образом, получаем
+$$I_1=\frac{2l^2((-1)^k (1+2k)\pi-2)}{(\pi + 2 \pi k)^2}, I_2=\frac{l}{2}.$$
+Подставим в выражение для $A_k$
+$$A_k=\frac{4l((-1)^k(1+2k)\pi-2)}{(\pi + 2\pi k)^2}=\frac{(-1)^k 4l}{(\pi + 2\pi k)}-\frac{8l}{(\pi + 2 \pi k)^2}$$
+%$$A_k=\left[ \begin{gathered} 
+%        u=x, dv=\cos(\frac{\pi+2\pi k}{2l} x)dx \\ 
+%        du = dx,v=\frac{2l}{\pi + 2 \pi k}\sin{(\frac{\pi + 2 \pi k}{2l}x)} \\ 
+%      \end{gathered} \right]
+%=\frac{2}{l}\Bigl( \frac{2l^2}{\pi + 2 \pi k}\sin{(\frac{\pi + 2 \pi k}%{2})}\Bigr) - \int_0^l \frac{2l}{\pi + 2 \pi k}\sin{(\frac{\pi + 2 \pi k}%{2l}x)}dx = $$
+%$$=\frac{(-1)^k 4l}{(\pi + 2\pi k)}-\frac{8l}{(\pi + 2 \pi k)^2}.$$
+%Найдем решение с помощью WolframMathematica:
+%\begin{figure}
+%    \includegraphics[width=0.75\linewidth]{image_2.png}
+%\end{figure}
 Тогда общее решение задачи $(3)$ имеет вид
-$$v(x,t) = \sum_{k=0}^\infty {\frac{(-1)^k 8l - 8l}{(\pi + 2\pi k)^2}e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t} \cos(\frac{\pi+2\pi k}{2l} x)}.$$
+$$v(x,t) = \sum_{k=0}^\infty {\Bigl( \frac{(-1)^k 4l}{(\pi + 2\pi k)}-\frac{8l}{(\pi + 2 \pi k)^2}\Bigr)e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t} \cos(\frac{\pi+2\pi k}{2l} x)}.\eqno(5)$$
+Попробуем решить задачу (3), используя WolframMathematica:
+\begin{figure}
+    \includegraphics[width=1\linewidth]{image_5.png}
+\end{figure}
+Попробуем упростить полученное решение
+$$v(x,t)=\frac{2\sum_{k=0}^\infty \frac{2l^2 e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t}\cos(\frac{\pi+2\pi k}{2l} x)(\pi\cos{\pi k}(1+2k)-2(1+\sin{\pi k}))}{(\pi + 2\pi k)^2}}{l}=$$
+$$=\frac{2\sum_{k=0}^\infty \frac{2l^2 e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t}\cos(\frac{\pi+2\pi k}{2l} x)((-1)^k \pi(1+2k)-2)}{(\pi+2\pi k)^2}}{l}=\sum_{k=0}^\infty \frac{4l e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t}\cos(\frac{\pi+2\pi k}{2l} x)((-1)^k \pi(1+2k)-2)}{(\pi+2\pi k)^2}=$$
+$$=\sum_{k=0}^\infty {\Bigl( \frac{(-1)^k 4l}{(\pi + 2\pi k)}-\frac{8l}{(\pi + 2 \pi k)^2}\Bigr)e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t} \cos(\frac{\pi+2\pi k}{2l} x)}.$$
+Таким образом, получаем, что решение задачи (3), полученное вручную, совпадает с решением, полученным с помощью WolframMathemtica.
+
 Тогда решение задачи $(1)$ имеет вид
-$$u(x,t)=\frac{1}{t+1}x + \sum_{k=0}^\infty {\frac{(-1)^k 8l - 8l}{(\pi + 2\pi k)^2}e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t} \cos(\frac{\pi+2\pi k}{2l} x)}.$$
+$$u(x,t)=\frac{1}{t+1}x + \sum_{k=0}^\infty {\Bigl( \frac{(-1)^k 4l}{(\pi + 2\pi k)}-\frac{8l}{(\pi + 2 \pi k)^2}\Bigr)e^{-\Bigl(a\frac{\pi+2\pi k}{2l}\Bigr)^2 t} \cos(\frac{\pi+2\pi k}{2l} x)}.$$
+
+К сожалению, возможности WolframMathematica не позволяют выполнить подстановку полученного решения из-за того, что мы работаем с бесконечной суммой.
+
 \end{document}

@@ -647,8 +647,7 @@ $$\begin{cases}
 остатка квадратурной формулы
 \[R(h, f) \approx \dfrac{I_{h_2} - I_{h_1}}{1 - \Bigr( \dfrac{h_2}{h_1} \Bigl)^m}\]
 
-\(m \ -\) алгебраическая степень точности методов, которая в нашем
-случае равна \(1\) для каждого метода.
+\(m \ -\) алгебраическая степень точности методов, которая в случае состовной квадратурной формулы средних прямоугольников равна 2, для составной квадратурной формулы трапеций $-$ 2.
 
 Подбирать шаги будем следующим образом
 \[h_1 = \dfrac{b-a}{N}, \ h_2 = \dfrac{h_1}{2}\]
@@ -691,9 +690,9 @@ $$\begin{cases}
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{m} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{n}{m} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
 
-\PY{n}{h1} \PY{o}{=} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\PY{n}{h1} \PY{o}{=} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
 
 \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Количество узлов}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Трапеции}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
 
@@ -705,7 +704,7 @@ $$\begin{cases}
 \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Количество узлов}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{N}  
 \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Трапеции}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
 
-\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{df}\PY{p}{,} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Средние прямоугольники}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{verify\PYZus{}integrity}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{df}\PY{p}{,} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Средние прямоугольники}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{verify\PYZus{}integrity}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{df}
 \end{Verbatim}
 \end{tcolorbox}
@@ -870,7 +869,7 @@ $$\begin{cases}
 \prompt{In}{incolor}{29}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-    \PY{k}{return} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{g}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{5}
+    \PY{k}{return} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{g}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{5}
 \end{Verbatim}
 \end{tcolorbox}
 

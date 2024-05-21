@@ -590,35 +590,35 @@ $$\begin{cases}
 
 Таким образом, АСТ нашей квадратурной формулы равна 3, поскольку, как ранее было отмечено, при $i=3$ мы получим равенство $0=0$.
 
-    \subsection*{Задача 3}
+\subsection*{Задача 3}
 
-Для применения к нашему интегралу $$I = \int\limits_1^3 \dfrac{\ln(\sin^2x + 3)}{x^2+2x-1}dx $$
-правила Рунге программно зададим подынтегральную функцию \(f(x)=\dfrac{\ln(\sin^2x + 3)}{x^2+2x-1}\).
+Зададим нашу функцию \(f(x)=\dfrac{\ln(\sin^2x + 3)}{x^2+2x-1}\)
+программно
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{12}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{n}{math}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{math}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{3}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
 
-\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{ }\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{ }
+\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{10}
 \end{Verbatim}
 \end{tcolorbox}
 
     Рассмотрим общий вид составной квадратурной формулы средних
 прямоугольников
-\[I_{\text{сс}}=h \sum_{k=0}^{N-1} f(a+(k + \dfrac{1}{2}h)),\] и зададим
+\[I_{\text{сс}}=h \sum_{k=0}^{N-1} f(a+(k + \dfrac{1}{2})h),\] и зададим
 его программно.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{14}{\boxspacing}
+\prompt{In}{incolor}{13}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{mean\PYZus{}rect}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{h}\PY{p}{)}\PY{p}{:}
     \PY{n}{I} \PY{o}{=} \PY{l+m+mi}{0}
     \PY{n}{N} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{b} \PY{o}{\PYZhy{}} \PY{n}{a}\PY{p}{)} \PY{o}{/} \PY{n}{h}\PY{p}{)}
     
     \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{N}\PY{p}{)}\PY{p}{:}
-        \PY{n}{I} \PY{o}{+}\PY{o}{=} \PY{n}{f}\PY{p}{(}\PY{n}{a} \PY{o}{+} \PY{p}{(}\PY{n}{k} \PY{o}{+} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{h}\PY{p}{)}\PY{p}{)}
+        \PY{n}{I} \PY{o}{+}\PY{o}{=} \PY{n}{f}\PY{p}{(}\PY{n}{a} \PY{o}{+} \PY{p}{(}\PY{n}{k} \PY{o}{+} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{*} \PY{n}{h}\PY{p}{)}
         
     \PY{k}{return} \PY{n}{h} \PY{o}{*} \PY{n}{I}
 \end{Verbatim}
@@ -628,7 +628,7 @@ $$\begin{cases}
 \[I_{\text{тс}} = h \Bigr[ \dfrac{f(a) + f(b)}{2} + \sum_{k=0}^{N-1}f(x_k)  \Bigl]\]
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{16}{\boxspacing}
+\prompt{In}{incolor}{15}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{trap}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{h}\PY{p}{)}\PY{p}{:}
     \PY{n}{I} \PY{o}{=} \PY{l+m+mi}{0}
@@ -647,15 +647,14 @@ $$\begin{cases}
 остатка квадратурной формулы
 \[R(h, f) \approx \dfrac{I_{h_2} - I_{h_1}}{1 - \Bigr( \dfrac{h_2}{h_1} \Bigl)^m}\]
 
-\(m \ -\) алгебраическая степень точности методов.
-
-Для составной квадратурной формулы средних прямоугольников $m=1$, для составной квадратурной формулы трапеций $m=2$.
+\(m \ -\) алгебраическая степень точности методов, которая в нашем
+случае равна \(1\) для каждого метода.
 
 Подбирать шаги будем следующим образом
 \[h_1 = \dfrac{b-a}{N}, \ h_2 = \dfrac{h_1}{2}\]
 
 Посмотрим, для какой квадратурной формулы мы быстрее сможем подобрать
-такие шаги \(h_1, h_2\), при которых \[|R(h,f)| \leq \epsilon\].
+такие шаги \(h_1, h_2\), при которых \[|R(h,f)| \leq \epsilon.\]
 Погрешность в этом задании возьмем \(\epsilon = 10^{-4}\), начальные
 шаги \[h_1=b-a, h_2 = \frac{h_1}{2}\] подбор будем делать по правилу
 \[|R(h,f)| \nleq \epsilon \Rightarrow h_1 = h_2, h_2 = \frac{h_1}{2}\]
@@ -663,7 +662,7 @@ $$\begin{cases}
 достигается нужная точность. Зададим правило Рунге программно
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{18}{\boxspacing}
+\prompt{In}{incolor}{17}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{runge\PYZus{}rule}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{I}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{epsilon} \PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}4}\PY{p}{)}\PY{p}{:}
     \PY{n}{h1} \PY{o}{=} \PY{n}{b} \PY{o}{\PYZhy{}} \PY{n}{a}
@@ -690,13 +689,13 @@ $$\begin{cases}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{19}{\boxspacing}
+\prompt{In}{incolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{m} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
 
-\PY{n}{h1} \PY{o}{=} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\PY{n}{h1} \PY{o}{=} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
 
-\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Количество узлов}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Средние прямоугольники}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
+\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Количество узлов}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Трапеции}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
 
 \PY{n}{N} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{*} \PY{n}{m}
 
@@ -704,41 +703,40 @@ $$\begin{cases}
     \PY{n}{N}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{b} \PY{o}{\PYZhy{}} \PY{n}{a}\PY{p}{)} \PY{o}{/} \PY{n}{h1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
     
 \PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Количество узлов}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{N}  
-\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Средние прямоугольники}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
+\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Трапеции}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
 
-\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{df}\PY{p}{,} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Трапеции}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{verify\PYZus{}integrity}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{df}\PY{p}{,} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Средние прямоугольники}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{verify\PYZus{}integrity}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{df}
 \end{Verbatim}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{19}{\boxspacing}
+\prompt{Out}{outcolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-    Количество узлов  Средние прямоугольники  Трапеции
-0                  1               -0.121278  1.257883
-1                  2                0.173059  0.461537
-2                  4                0.252260   0.19429
-3                  8                0.198618  0.089161
-4                 16                0.122705  0.042803
-5                 32                0.068250  0.020992
-6                 64                0.035984  0.010399
-7                128                0.018474  0.005176
-8                256                0.009360  0.002582
-9                512                0.004711   0.00129
-10              1024                0.002363  0.000644
-11              2048                0.001184  0.000322
-12              4096                0.000592  0.000161
-13              8192                0.000296  0.000081
-14             16384                0.000148
-15             32768                0.000074
+    Количество узлов  Трапеции Средние прямоугольники
+0                  1  1.257883              -0.121278
+1                  2  0.461537              -0.048862
+2                  4  0.194290              -0.015571
+3                  8  0.089161              -0.004272
+4                 16  0.042803              -0.001098
+5                 32  0.020992              -0.000277
+6                 64  0.010399              -0.000069
+7                128  0.005176
+8                256  0.002582
+9                512  0.001290
+10              1024  0.000644
+11              2048  0.000322
+12              4096  0.000161
+13              8192  0.000081
 \end{Verbatim}
 \end{tcolorbox}
         
     Как можно заметить, с увеличением количества узлов значение остатка по
 правилу Рунге уменьшается как при использовании составной КФ средних
 прямоугольников, так и составной КФ трапеций, однако можно увидеть, что
-для КФ трапеций значения примерно в \(2\) раза меньше, начиная с
-количества узлов \(h=16\), чем для средних прямоугольников.
+для КФ средних прямоугольников мы изначально начинали с меньшего по
+модулю значения остатка и практически в два раза быстрее нам удалось
+достигнуть нужной точности.
 
     \subsection*{Задача 4}
 
@@ -768,7 +766,7 @@ $$\begin{cases}
 Перейдем к программной реализации.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{22}{\boxspacing}
+\prompt{In}{incolor}{21}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{u}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{x}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
@@ -776,7 +774,7 @@ $$\begin{cases}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{23}{\boxspacing}
+\prompt{In}{incolor}{22}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{hermite\PYZus{}quadrature\PYZus{}formula}\PY{p}{(}\PY{n}{f}\PY{p}{,} \PY{n}{epsilon}\PY{o}{=}\PY{l+m+mf}{10e\PYZhy{}4}\PY{p}{)}\PY{p}{:}
     \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{1}
@@ -802,14 +800,14 @@ $$\begin{cases}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{24}{\boxspacing}
+\prompt{In}{incolor}{23}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{hermite\PYZus{}quadrature\PYZus{}formula}\PY{p}{(}\PY{n}{u}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{24}{\boxspacing}
+\prompt{Out}{outcolor}{23}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 (0.6831692972144928, 7)
 \end{Verbatim}
@@ -817,7 +815,7 @@ $$\begin{cases}
         
     Таким образом, получаем, что приближенное значение интеграла равно
 \[I(f) \approx 0.6832\] и получено оно было при \(n=7\) узлах.
-\newpage
+
     \subsection*{Задача 5}
 
 Перепишем наше уравнение
@@ -828,20 +826,9 @@ $$\begin{cases}
 Таким образом, решение этого уравнения совпадает с решением нелинейного
 уравнения \[f(x)=0,\] которое будем решать методом Ньютона.
 
-    Вспомним первую лабораторную работу и рассмотрим теорему о сходимости метода Ньютона. \begin{theorem}[о сходимости метода Ньютона]
-Пусть выполняются следующие условия:
-\begin{enumerate}
-\item Функция $f(x)$ определена и дважды непрерывно дифференцируема на отрезке $$s_0 = [x^0; x^0 + 2h_0],\quad h_0 =- \dfrac{f(x^0)}{f'(x^0)}.$$ При этом на концах отрезка $f(x)f'(x)\ne 0$.
-\item Для начального приближения $x^0$ выполняется неравенство $$2|h_0|M \leq |f'(x_0)|,\quad M = \underset{x\in s_0}{\max}|f''(x)|.$$
-\end{enumerate}
-Тогда справедливы следующие утверждения: 
-\begin{enumerate}
-\item Внутри отрезка $s_0$ уравнение $f(x) = 0$ имеет корень $x^*$ и при этом этот корень единственный.
-\item Последовательность приближений $x^k$, $k=1,2,\ldots$ может быть построена по формуле с заданным приближением $x^0$.
-\item Последовательность $x^k$ сходится к корню $x^*$, то есть $x^k \xrightarrow[k\to\infty]{}x^*$.
-\item Скорость сходимости характеризуется неравенством $$|x^* - x^{k+1}|\leq |x^{k+1} - x^k|\leq \dfrac{M}{2|f'(x^*)|}\cdot (x^k-x^{k-1})^2,\quad k=0,1,2,\ldots\eqno(4)$$
-\end{enumerate}
-\end{theorem}
+    Вспомним первую лабораторную работу, уравнение будет иметь единственный
+корень на отрезке \([a, b]\), если функция на концах отрезка имеет
+разные по знаку значения и является монотонной.
 
 Начнем с монотонности функции, для этого рассмотрим ее производную,
 вычисленную по теореме Барроу
@@ -849,7 +836,8 @@ $$\begin{cases}
 
 Поскольку функции \((x-1)^6\) и \(\lg \sqrt{x^2 + 1} + 2\) являются
 строго положительными на отрезке \([0, +\infty),\) тогда и
-\[f'(x)>0, \ x \in [0, +\infty],\] следовательно, наша исходная функция является монотонно возрастающей на нашем множестве.
+\[f'(x)>0, \ x \in [0, +\infty],\] следовательно, наша исходная функци
+монотонна на нашем множестве.
 
 Для определения знака на концах отрезка, необходимо приближенно
 вычислить интеграл
@@ -859,7 +847,7 @@ $$\begin{cases}
 \[g(x) = (t-1)^6 (\lg \sqrt{t^2 + 1} + 2).\]
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{28}{\boxspacing}
+\prompt{In}{incolor}{27}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{g}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{6} \PY{o}{*} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{)}
@@ -872,29 +860,29 @@ $$\begin{cases}
 где \(I_h(f)\) - квадратурная формула, \(R(h,f)\) - остаток составной
 квадратурной формулы.
 
-Опираясь на заданее 3, будем использовать составную формулу трапеций,
-поскольку этот метод сошелся быстрее в рассматриваемом случае, для
-\(\epsilon = 10^{-4}\).
+Опираясь на заданее 3, будем использовать составную формулу средних
+прямоугольников, поскольку этот метод сошелся быстрее в рассматриваемом
+случае, для \(\epsilon = 10^{-4}\).
 
 Возьмем значение \(x=2\)
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{48}{\boxspacing}
+\prompt{In}{incolor}{29}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-    \PY{k}{return} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{trap}\PY{p}{,} \PY{n}{g}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{5}
+    \PY{k}{return} \PY{n}{runge\PYZus{}rule}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{mean\PYZus{}rect}\PY{p}{,} \PY{n}{g}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{5}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{50}{\boxspacing}
+\prompt{In}{incolor}{30}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
--4.318882467251919
+-4.319155993134725
     \end{Verbatim}
 
     То есть \[f(2) < 0.\] Так как мы помним, что наша функция является
@@ -905,14 +893,14 @@ $$\begin{cases}
 \((2, +\infty)\), например, \(x=2.5\)
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{52}{\boxspacing}
+\prompt{In}{incolor}{32}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{l+m+mf}{2.5}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-2.4211806131149247
+2.420954617125342
     \end{Verbatim}
 
     Таким образом, \[f(2.5) > 0,\] что, опираясь на монотонность функции
@@ -926,7 +914,7 @@ $$\begin{cases}
 Сведем наш отрезок к минимум, применив метод деления отрезка пополам
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{61}{\boxspacing}
+\prompt{In}{incolor}{34}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{a}\PY{p}{,} \PY{n}{b} \PY{o}{=} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{2.5}
 \PY{n}{epsilon\PYZus{}2} \PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}1}
@@ -950,13 +938,13 @@ $$\begin{cases}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{61}{\boxspacing}
+\prompt{Out}{outcolor}{34}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
        a       b     b-a      f(a)      f(b)  (a+b)/2
-0  2.000  2.5000  0.5000 -4.318882  2.421181  2.25000
-1  2.250  2.5000  0.2500 -2.777240  2.421181  2.37500
-2  2.375  2.5000  0.1250 -0.886216  2.421181  2.43750
-3  2.375  2.4375  0.0625 -0.886216  0.547190  2.40625
+0  2.000  2.5000  0.5000 -4.319156  2.420955  2.25000
+1  2.250  2.5000  0.2500 -2.777547  2.420955  2.37500
+2  2.375  2.5000  0.1250 -0.886425  2.420955  2.43750
+3  2.375  2.4375  0.0625 -0.886425  0.546916  2.40625
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -965,13 +953,28 @@ $$\begin{cases}
 
 Вспоминая метод Ньютона, имеем следующую формулу
 \[x^{k+1} = x^k - \dfrac{f(x^k)}{f'(x^0)},\quad k = 0,1,\ldots;\quad x_0\]
-Перейдем непосредственно к сходимости метода.
+Так же рассмотрим теорему о сходимости метода Ньютона
 
-Выберем \(x_0\) из полученного отрезка, например, \(x_0 = 2.4\) и перейдем к проверке
+\begin{theorem}[о сходимости метода Ньютона]
+Пусть выполняются следующие условия:
+\begin{enumerate}
+\item Функция $f(x)$ определена и дважды непрерывно дифференцируема на отрезке $$s_0 = [x^0; x^0 + 2h_0],\quad h_0 =- \dfrac{f(x^0)}{f'(x^0)}.$$ При этом на концах отрезка $f(x)f'(x)\ne 0$.
+\item Для начального приближения $x^0$ выполняется неравенство $$2|h_0|M \leq |f'(x_0)|,\quad M = \underset{x\in s_0}{\max}|f''(x)|.$$
+\end{enumerate}
+Тогда справедливы следующие утверждения: 
+\begin{enumerate}
+\item Внутри отрезка $s_0$ уравнение $f(x) = 0$ имеет корень $x^*$ и при этом этот корень единственный.
+\item Последовательность приближений $x^k$, $k=1,2,\ldots$ может быть построена по формуле с заданным приближением $x^0$.
+\item Последовательность $x^k$ сходится к корню $x^*$, то есть $x^k \xrightarrow[k\to\infty]{}x^*$.
+\item Скорость сходимости характеризуется неравенством $$|x^* - x^{k+1}|\leq |x^{k+1} - x^k|\leq \dfrac{M}{2|f'(x^*)|}\cdot (x^k-x^{k-1})^2,\quad k=0,1,2,\ldots\eqno(4)$$
+\end{enumerate}
+\end{theorem}
+
+Выберем \(x_0\) из нашего отрезка, \(x_0 = 2.4\) и перейдем к проверке
 условий теоремы
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{77}{\boxspacing}
+\prompt{In}{incolor}{36}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{x0} \PY{o}{=} \PY{l+m+mf}{2.4}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Начальное приближение: }\PY{l+s+si}{\PYZob{}}\PY{n}{x0}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -986,38 +989,38 @@ $$\begin{cases}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 Начальное приближение: 2.4
-h\_0: 0.016157779181961252
-s\_0 = [ 2.4 ; 2.432315558363922 ]
+h\_0: 0.016168261001675316
+s\_0 = [ 2.4 ; 2.4323365220033506 ]
     \end{Verbatim}
 
     Проверяем, чтобы на концах отрезка значение функции и ее производной не
 обращались в ноль одновременно:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{83}{\boxspacing}
+\prompt{In}{incolor}{38}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{f}\PY{p}{(}\PY{n}{s0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)} \PY{o}{*} \PY{n}{g}\PY{p}{(}\PY{n}{s0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{83}{\boxspacing}
+\prompt{Out}{outcolor}{38}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
--8.001720689288327
+-8.00691153839716
 \end{Verbatim}
 \end{tcolorbox}
         
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{85}{\boxspacing}
+\prompt{In}{incolor}{39}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{f}\PY{p}{(}\PY{n}{s0}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)} \PY{o}{*} \PY{n}{g}\PY{p}{(}\PY{n}{s0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{85}{\boxspacing}
+\prompt{Out}{outcolor}{39}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-9.1880804429428
+9.194062522206684
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -1025,12 +1028,10 @@ s\_0 = [ 2.4 ; 2.432315558363922 ]
 
 Вычислим вторую производную для функции \(f(x)\):
 
-\[f''(x) = 3(x-1)^5 \ln{(x^2+1)} + \frac{(x-1)^5(12x^2+12)+(x-1)^6x}{x^2+1}.\]
-
-Зададим ее программно.
+\[f''(x) = 3(x-1)^5 \ln{(x^2+1)} + \frac{(x-1)^5(12x^2+12)+(x-1)^6x}{x^2+1}\]
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{95}{\boxspacing}
+\prompt{In}{incolor}{41}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{f\PYZus{}second\PYZus{}derivative}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{l+m+mi}{3} \PY{o}{*} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{5} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{5} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{12} \PY{o}{*} \PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{12}\PY{p}{)} \PY{o}{+} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{6} \PY{o}{*} \PY{n}{x}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}
@@ -1038,10 +1039,10 @@ s\_0 = [ 2.4 ; 2.432315558363922 ]
 \end{tcolorbox}
 
     Найдем \[M = \max_{x \in s_0}|f''(x)|\] и сразу проверим выполнение
-условия 2 теоремы.
+условия
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{103}{\boxspacing}
+\prompt{In}{incolor}{43}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{M} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{absolute}\PY{p}{(}\PY{n}{f\PYZus{}second\PYZus{}derivative}\PY{p}{(}\PY{n}{s0}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{M: }\PY{l+s+si}{\PYZob{}}\PY{n}{M}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -1051,11 +1052,11 @@ s\_0 = [ 2.4 ; 2.432315558363922 ]
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-M: 110.3495484134902
+M: 110.35791665977399
     \end{Verbatim}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{103}{\boxspacing}
+\prompt{Out}{outcolor}{43}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 True
 \end{Verbatim}
@@ -1068,7 +1069,7 @@ True
 Перейдем непосредственно к реализации метода Ньютона
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{120}{\boxspacing}
+\prompt{In}{incolor}{45}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{newton\PYZus{}method}\PY{p}{(}\PY{n}{x0}\PY{p}{,} \PY{n}{epsilon}\PY{o}{=}\PY{l+m+mf}{1e\PYZhy{}4}\PY{p}{,} \PY{n}{max\PYZus{}iterations}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{:}
     \PY{n}{x\PYZus{}prev} \PY{o}{=} \PY{n}{x0}
@@ -1098,36 +1099,36 @@ True
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{120}{\boxspacing}
+\prompt{Out}{outcolor}{45}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
     Решение   Погрешность
-0  2.416158  1.615778e-02
-1  2.415611  5.471562e-04
-2  2.415610  6.347148e-07
+0  2.416168  1.616826e-02
+1  2.415621  5.471388e-04
+2  2.415620  6.594857e-07
 \end{Verbatim}
 \end{tcolorbox}
         
-    Таким образом, мы смогли достичь нужной степени точности за $3$
+    Таким образом, мы смогли достичь нужной степени точности за три
 итерации, и корнем нашего уравнения является значение
-\[x \approx 2.415610.\]
+\[x \approx 2.415620.\]
 
 Выполним проверку
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{118}{\boxspacing}
+\prompt{In}{incolor}{73}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{f}\PY{p}{(}\PY{l+m+mf}{2.415610}\PY{p}{)}
+\PY{n}{f}\PY{p}{(}\PY{l+m+mf}{2.415620}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{118}{\boxspacing}
+\prompt{Out}{outcolor}{73}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-2.79332797781251e-07
+-1.1026360226651377e-05
 \end{Verbatim}
 \end{tcolorbox}
         
-    Получаем, что $$f(2.415610) \approx 2.79 \cdot 10^{-7} < 10^{-4} = \epsilon,$$ Следовательно, полученное решение действительно является решением уравнения при
+    Полученное решение действительно является решением уравнения при
 заданной точности \(\epsilon = 10^{-4}\).
 
 

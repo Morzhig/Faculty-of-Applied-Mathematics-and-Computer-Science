@@ -545,7 +545,7 @@ $$v(x,y,0)=\sum_{n,m=1}^\infty[ A_{nm}sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{
 Здесь видно, что при четный $n\ A_{n6}=0$, а при нечетных
 $$A_{2k+1,6}=-\frac{96 (2k+1)}{\pi ^2 \left((2k+1)^2-36\right)^2},\ n=2k+1.$$
 Тогда, подставив $z=c,$ получим:
-$$v(x,y,c)=\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}z)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}z))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
+$$v(x,y,c)=\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}c)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}c))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
 $$+\sum_{n,m=1, m \neq 6}^\infty[ B_{nm}sh(\lambda_{nm}c)sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{b}y)}]=xy^2(x-2)(y-3).$$
 Отсюда $A_{2k+1, 6}\ch{(\lambda_{2k+1, 6}c)}+B_{2k+1,6}\sh(\lambda_{2k+1, 6}c)=0, \Rightarrow B_{2k+1,6}=-A_{2k+1,6}\cth{(\lambda_{2k+1,6}c)},\ \forall k, m=6.$
 
@@ -557,9 +557,13 @@ $$I_1=\int_0^3y^2(y-3)\sin{(\frac{\pi m}{b}y)}dy=[\text{Wolfram Mathematica}]=\f
 $$I_2=\int_0^2x(x-2)sin{(\frac{\pi n}{a}x)}dx=[\text{Wolfram Mathematica}]=\frac{16 ((-1)^n-1)}{\pi ^3 n^3}.$$
 Таким образом, получаем
 $$\psi_{nm}=\dfrac23I_1I_2=\frac{1728 (1+2(-1)^m)((-1)^n-1)}{\pi ^6 m^3n^3}.$$
-
-Тогда $$v(x,y,z)=\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}c)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}c))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
-$$+\sum_{n,m=1, m \neq 6}^\infty[ \frac{\psi_{nm}}{\sh(\lambda_{nm}c)}\sh(\lambda_{nm}z)\sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{b}y)}].$$
+Отсюда следует, что 
+$$B_{nm}=\begin{cases}
+    0,n=2k,\\
+    \frac{\psi_{2k+1,m}}{\sh(\lambda_{2k+1,m} c)},n=2k+1.
+\end{cases}$$
+Тогда $$v(x,y,z)=\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}z)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}z))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
+$$+\sum_{k,m=1, m \neq 6}^\infty[ \frac{\psi_{2k+1,m}}{\sh(\lambda_{2k+1,m}c)}\sh(\lambda_{2k+1,m}z)\sin{(\frac{\pi (2k+1)}{a}x)}\sin{(\frac{\pi m}{b}y)}].$$
 Теперь перейдем к задаче для $\omega$:
 $$\begin{cases}
     \Delta \omega=-(x+y+z+xe^y+4),\\
@@ -607,11 +611,11 @@ $$\Rightarrow B_{nm}=\frac{1}{\sh(\lambda_{nm}c)}((\frac{A_1}{\lambda_{nm}^2}c+\
 Таким образом, получили выражение для коэффициентов $Z_{nm}(z)$, что позволяет нам собрать решение исходной задачи.
 $$\omega(x,y,z)=\sum_{n,m=1}^\infty  [sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{b}y)}(A_{nm}\ch(\lambda_{nm}z)+B_{nm}\sh(\lambda_{nm}z)-(\frac{A_1}{\lambda_{nm}^2}z+\frac{A_2}{\lambda_{nm}^2}))].$$
 Тогда 
-$$V(x,y,z)=\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}c)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}c))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
+$$V(x,y,z)=\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}z)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}z))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
 $$+\sum_{n,m=1, m \neq 6}^\infty[ \frac{\psi_{nm}}{\sh(\lambda_{nm}c)}\sh(\lambda_{nm}z)\sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{b}y)}]+$$
 $$+\sum_{n,m=1}^\infty  [sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{b}y)}(A_{nm}\ch(\lambda_{nm}z)+B_{nm}\sh(\lambda_{nm}z)-(\frac{A_1}{\lambda_{nm}^2}z+\frac{A_2}{\lambda_{nm}^2}))].$$
 И решение исходной задачи имеет вид
-$$u=y^2+z^2+xe^y+\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}c)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}c))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
+$$u=y^2+z^2+xe^y+\sum_{k=1}^\infty (A_{2k+1,6}\ch{(\lambda_{2k+1,6}z)}+B_{2k+1,6}\sh(\lambda_{2k+1,6}z))\sin{(\frac{\pi (2k+1)}{a} x)}\sin{(2\pi y)}+$$
 $$+\sum_{n,m=1, m \neq 6}^\infty[ \frac{\psi_{nm}}{\sh(\lambda_{nm}c)}\sh(\lambda_{nm}z)\sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{b}y)}]+$$
 $$+\sum_{n,m=1}^\infty  [sin{(\frac{\pi n}{a}x)}\sin{(\frac{\pi m}{b}y)}(A_{nm}\ch(\lambda_{nm}z)+B_{nm}\sh(\lambda_{nm}z)-(\frac{A_1}{\lambda_{nm}^2}z+\frac{A_2}{\lambda_{nm}^2}))]$$
 \subsubsection*{Визуализация решения}
